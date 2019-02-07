@@ -59,10 +59,10 @@ function onMove(e) {
     let fac = (left + dragWidth / 2 - containerOffset) * 100 / containerWidth;
     let width = fac + '%';
 
-    if (fac < 5) {
+    if (fac < 10) {
         onEnd();
         onBeer();
-    } else if (fac > 95) {
+    } else if (fac > 90) {
         onEnd();
         onWater();
     }
