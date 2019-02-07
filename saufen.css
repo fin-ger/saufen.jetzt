@@ -1,0 +1,163 @@
+html {
+    position: relative;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-image: url('1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+    background-blend-mode: multiply;
+    transition: background-color 0.3s ease;
+    font-family: Sans;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+}
+
+a {
+    background: #222a;
+    display: inline-block;
+    font-size: 66%;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+    padding: 1em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.dragging {
+    cursor: ew-resize;
+}
+
+.resize {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+}
+
+.resize .second {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('2.jpg');
+    background-repeat: none;
+    background-size: cover;
+    background-color: white;
+    background-blend-mode: multiply;
+    transition:
+        margin 0.3s ease,
+        height 0.3s ease,
+        width 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.separator {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    margin-left: -2px;
+    background: rgba(0,0,0,.5);
+    cursor: ew-resize;
+}
+
+.separator:after {
+    position: absolute;
+    top: 50%;
+    width: 48px;
+    height: 48px;
+    margin: -24px 0 0 -24px;
+    content: '';
+    background-image: url('arrow.svg');
+    background-size: 24px;
+    background-position: center;
+    background-color: #333;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    transition:
+        width 0.3s ease,
+        height 0.3s ease,
+        margin 0.3s ease,
+        background-size 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+
+.separator.draggable:after {
+    width: 32px;
+    height: 32px;
+    margin: -16px 0 0 -16px;
+    background-size: 16px;
+}
+
+.content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+
+.chosen .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.water, .beer {
+    display: inline-block;
+    padding: 1em;
+}
+
+.water {
+    color: white;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.beer a {
+    color: black;
+    background: #ffd000;
+    padding: 1em;
+    margin: 1em;
+    display: block;
+    border-radius: 2em;
+    font-weight: bold;
+    font-size: 150%;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+
+.chosen .separator {
+    display: none;
+}
+
+.chosen .resize {
+    width: 100% !important;
+}
+
+body.chosen, .chosen .second {
+    margin: -10%;
+    height: 120%;
+    width: 120%;
+    background-color: #777;
+}
