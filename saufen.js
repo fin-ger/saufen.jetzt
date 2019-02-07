@@ -8,6 +8,7 @@ let minLeft;
 let maxLeft;
 let water;
 let beer;
+let width;
 
 function onWater() {
     document.body.classList.add('chosen');
@@ -57,7 +58,7 @@ function onMove(e) {
 
     // Translate the separator's left value to masked divs width.
     let fac = (left + dragWidth / 2 - containerOffset) * 100 / containerWidth;
-    let width = fac + '%';
+    width = fac + '%';
 
     if (fac < 10) {
         onEnd();
@@ -66,10 +67,6 @@ function onMove(e) {
         onEnd();
         onWater();
     }
-
-    // Set the new values for the slider and the separator.
-    separator.style.left = width;
-    resize.style.width = width;
 }
 
 function onEnd() {
@@ -92,6 +89,14 @@ function init() {
     document.body.onmouseup = onEnd;
     document.body.ontouchend = onEnd;
     document.body.onmouseleave = onEnd;
+
+    setInterval(function () {
+        if (!!width) {
+            // Set the new values for the slider and the separator.
+            separator.style.left = width;
+            resize.style.width = width;
+        }
+    }, 1000 / 60);
 }
 
 if (document.readyState === 'complete') {
