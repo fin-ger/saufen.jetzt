@@ -14,7 +14,11 @@ html, body {
     background-size: cover;
     background-color: white;
     background-blend-mode: multiply;
-    transition: background-color 0.3s ease;
+    transition:
+        margin 0.3s ease,
+        height 0.3s ease,
+        width 0.3s ease,
+        background-color 0.3s ease;
     font-family: sans-serif;
 }
 
