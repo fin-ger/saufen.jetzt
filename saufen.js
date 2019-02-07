@@ -25,7 +25,7 @@ function onStart(e) {
     document.body.classList.add('dragging');
 
     // Check if it's a mouse or touch event and pass along the correct value
-    let start = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
+    let start = (e.pageX) ? e.pageX : e.changedTouches[0].pageX;
 
     // Get the initial position
     dragWidth = separator.offsetWidth;
@@ -45,7 +45,7 @@ function onStart(e) {
 
 function onMove(e) {
     // Check if it's a mouse or touch event and pass along the correct value
-    let move = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
+    let move = (e.pageX) ? e.pageX : e.changedTouches[0].pageX;
     let left = move + pos - dragWidth;
 
     // Prevent going off limits
