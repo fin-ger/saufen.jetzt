@@ -15,7 +15,7 @@ html, body {
     background-color: white;
     background-blend-mode: multiply;
     transition: background-color 0.3s ease;
-    font-family: Sans;
+    font-family: sans-serif;
 }
 
 footer {
