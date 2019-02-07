@@ -59,7 +59,7 @@ a:hover {
     width: 100vw;
     height: 100vh;
     background-image: url('2.jpg');
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: cover;
     background-color: white;
     background-blend-mode: multiply;
