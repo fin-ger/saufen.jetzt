@@ -205,7 +205,7 @@ button.back:active {
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
   font-weight: bold;
-  font-size: 150%;
+  font-size: 125%;
   box-shadow: 0 2px 6px rgba(0,0,0,.3);
 }
 
@@ -220,7 +220,7 @@ button.back:active {
   margin-left: 0;
   border-top-right-radius: 2em;
   border-bottom-right-radius: 2em;
-  font-size: 150%;
+  font-size: 125%;
   box-shadow: 0 2px 6px rgba(0,0,0,.3);
   transition: color 0.3s ease;
 }
