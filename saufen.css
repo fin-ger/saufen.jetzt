@@ -1,257 +1,342 @@
+@font-face {
+  font-family: 'Font Awesome';
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src:
+    url("fonts/fa-solid-900.woff2") format("woff2"),
+    url("fonts/fa-solid-900.woff") format("woff"),
+    url("fonts/fa-solid-900.ttf") format("truetype");
+}
+
 html {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background-image: url('1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: white;
-    background-blend-mode: multiply;
-    transition:
-        margin 0.3s ease,
-        height 0.3s ease,
-        width 0.3s ease,
-        background-color 0.3s ease;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-image: url('assets/beer.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+  background-blend-mode: multiply;
+  transition:
+    margin 0.3s ease,
+    height 0.3s ease,
+    width 0.3s ease,
+    background-color 0.3s ease;
+  font-family: sans-serif;
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
 }
 
 a {
-    background: #222a;
-    display: inline-block;
-    font-size: 66%;
-    font-weight: bold;
-    text-decoration: none;
-    color: inherit;
-    padding: 1em;
+  background: #222a;
+  display: inline-block;
+  font-size: 66%;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  padding: 1em;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .dragging {
-    cursor: ew-resize;
+  cursor: ew-resize;
 }
 
 .resize {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 50%;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.animate .resize {
+  transition: width 0.3s ease;
 }
 
 .resize .second {
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: white;
-    background-blend-mode: multiply;
-    transition:
-        margin 0.3s ease,
-        height 0.3s ease,
-        width 0.3s ease,
-        background-color 0.3s ease;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('assets/water.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+  background-blend-mode: multiply;
+  transition:
+    margin 0.3s ease,
+    height 0.3s ease,
+    width 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .separator {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    margin-left: -2px;
-    background: rgba(0,0,0,.5);
-    cursor: ew-resize;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  margin-left: -2px;
+  background: rgba(0,0,0,.5);
+  cursor: ew-resize;
 }
 
 .separator:after {
-    position: absolute;
-    top: 50%;
-    width: 48px;
-    height: 48px;
-    margin: -24px 0 0 -24px;
-    content: '';
-    background-image: url('arrow.svg');
-    background-size: 24px;
-    background-position: center;
-    background-color: #333;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    transition:
-        width 0.3s ease,
-        height 0.3s ease,
-        margin 0.3s ease,
-        background-size 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  font-family: 'Font Awesome';
+  position: absolute;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  content: '\f337';
+  background-color: #333;
+  color: white;
+  text-align: center;
+  line-height: 48px;
+  font-size: 24px;
+  border-radius: 50%;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    margin 0.3s ease,
+    font-size 0.3s ease,
+    line-height 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
 }
 
 .separator.draggable:after {
-    width: 32px;
-    height: 32px;
-    margin: -16px 0 0 -16px;
-    background-size: 16px;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+i {
+  font-family: 'Font Awesome';
+  font-style: normal;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button.back {
+  background: #0065dc;
+  border-radius: 2em;
+  color: white;
+  padding: 1em 2em;
+  margin: 1em;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  grid-column-end: span 2;
+  justify-self: center;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+button.back:active {
+  background: #00479b;
 }
 
 .content {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    text-align: center;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
 }
 
 .chosen .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .water, .beer {
-    display: inline-block;
-    padding: 1em;
+  display: inline-block;
+  padding: 1em;
+  margin: 1em;
 }
 
 .water {
-    color: white;
-    font-weight: bold;
-    font-size: 150%;
+  color: white;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.beer {
+  display: grid;
+  grid: auto-flow auto / auto auto;
 }
 
 .beer a {
-    color: black;
-    background: #ffd000;
-    padding: 1em;
-    margin: 1em;
-    display: block;
-    border-radius: 2em;
-    font-weight: bold;
-    font-size: 150%;
-    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  color: black;
+  background: #ffd000;
+  padding: 1em 2em;
+  margin: 1em;
+  padding-right: 1em;
+  margin-right: 0;
+  display: inline-block;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+  font-weight: bold;
+  font-size: 150%;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+
+.beer button.copy {
+  display: inline-block;
+  margin-left: 0;
+  background: #333;
+  color: #ffd000;
+  margin: 1em;
+  padding: 1em;
+  padding-right: 1.5em;
+  margin-left: 0;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  font-size: 150%;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  transition: color 0.3s ease;
+}
+
+.beer button.copy.success {
+  color: #3dc400;
+}
+
+.beer button.copy.error {
+  color: #c42b00
+}
+
+.beer button.copy:active {
+  background: #222;
 }
 
 .chosen .separator {
-    display: none;
+  display: none;
 }
 
 .chosen .resize {
-    width: 100% !important;
+  width: 100% !important;
 }
 
 body.chosen, .chosen .second {
-    margin: -10%;
-    height: 120%;
-    width: 120%;
-    background-color: #777;
+  margin: -10%;
+  height: 120%;
+  width: 120%;
+  background-color: #777;
 }
 
 .github-fork-ribbon {
-    width: 12.1em;
-    height: 12.1em;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    z-index: 9999;
-    pointer-events: none;
-    font-size: 13px;
-    text-decoration: none;
-    text-indent: -999999px;
-    background: transparent;
+  width: 12.1em;
+  height: 12.1em;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  pointer-events: none;
+  font-size: 13px;
+  text-decoration: none;
+  text-indent: -999999px;
+  background: transparent;
 }
 
 .github-fork-ribbon:hover, .github-fork-ribbon:active {
-    background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 .github-fork-ribbon:before, .github-fork-ribbon:after {
-    /* The right and left classes determine the side we attach our banner to */
-    position: absolute;
-    display: block;
-    width: 15.38em;
-    height: 1.54em;
+  /* The right and left classes determine the side we attach our banner to */
+  position: absolute;
+  display: block;
+  width: 15.38em;
+  height: 1.54em;
 
-    top: 3.23em;
-    right: -3.23em;
+  top: 3.23em;
+  right: -3.23em;
 
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .github-fork-ribbon:before {
-    content: "";
+  content: "";
 
-    /* Add a bit of padding to give some substance outside the "stitching" */
-    padding: .38em 0;
+  /* Add a bit of padding to give some substance outside the "stitching" */
+  padding: .38em 0;
 
-    /* Set the base colour */
-    background-color: #333;
+  /* Set the base colour */
+  background-color: #333;
 
-    /* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.15)));
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
-    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  /* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.15)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
 
-    /* Add a drop shadow */
-    -webkit-box-shadow: 0 .15em .23em 0 rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 .15em .23em 0 rgba(0, 0, 0, 0.5);
-    box-shadow: 0 .15em .23em 0 rgba(0, 0, 0, 0.5);
+  /* Add a drop shadow */
+  -webkit-box-shadow: 0 .15em .23em 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 .15em .23em 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 .15em .23em 0 rgba(0, 0, 0, 0.5);
 
-    pointer-events: auto;
+  pointer-events: auto;
 }
 
 .github-fork-ribbon:after {
-    /* Set the text from the data-ribbon attribute */
-    content: attr(data-ribbon);
+  /* Set the text from the data-ribbon attribute */
+  content: attr(data-ribbon);
 
-    /* Set the text properties */
-    color: #fff;
-    font: 700 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.54em;
-    text-decoration: none;
-    text-shadow: 0 -.08em rgba(0, 0, 0, 0.5);
-    text-align: center;
-    text-indent: 0;
+  /* Set the text properties */
+  color: #fff;
+  font: 700 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.54em;
+  text-decoration: none;
+  text-shadow: 0 -.08em rgba(0, 0, 0, 0.5);
+  text-align: center;
+  text-indent: 0;
 
-    /* Set the layout properties */
-    padding: .15em 0;
-    margin: .15em 0;
+  /* Set the layout properties */
+  padding: .15em 0;
+  margin: .15em 0;
 
-    /* Add "stitching" effect */
-    border-width: .08em 0;
-    border-style: dotted;
-    border-color: #fff;
-    border-color: rgba(255, 255, 255, 0.7);
+  /* Add "stitching" effect */
+  border-width: .08em 0;
+  border-style: dotted;
+  border-color: #fff;
+  border-color: rgba(255, 255, 255, 0.7);
 }
